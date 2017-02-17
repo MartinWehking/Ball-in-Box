@@ -99,11 +99,13 @@ public class Field extends JPanel implements BallStateObserver {
      */
     private void startRepaintTimer() {
         if (repaintTimer == null) {
-            repaintTimer = new Timer(delay, new ActionListener() {
-                public void actionPerformed(ActionEvent event) {
-                    repaint();
-                    revalidate();
-                }
+            repaintTimer = new Timer(delay, event -> {
+                SwingUtilities.invokeLater(new Thread() {
+                    public void run() {
+                        repaint();
+                        revalidate();
+                    }
+                });
             });
             repaintTimer.start();
         }
