@@ -70,7 +70,7 @@ public class Field extends JPanel implements BallStateObserver {
     public void notifyBallIsActive() {
         if (repaintTimer != null) {
             repaintTimer.start();
-            ballState.setText("Ball rollt");
+            ballState.setText("Ball rolls");
         }
     }
 
@@ -84,7 +84,7 @@ public class Field extends JPanel implements BallStateObserver {
     public void notifyBallIsInactive() {
         if (repaintTimer != null) {
             repaintTimer.stop();
-            ballState.setText("Ball ruht");
+            ballState.setText("Ball rests");
         }
     }
 
