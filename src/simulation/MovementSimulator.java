@@ -2,7 +2,7 @@ package simulation;
 
 import gui.BallStateObserver;
 
-import java.util.LinkedList;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
@@ -54,7 +54,7 @@ public class MovementSimulator implements Simulation {
      */
     public MovementSimulator(int length, int height, int ballRadius) {
         box = new Box(length, height, ballRadius);
-        observers = new LinkedList<>();
+        observers = new ArrayList<>();
         refreshTime = 10;
     }
 
@@ -195,12 +195,12 @@ public class MovementSimulator implements Simulation {
             double proofX = newX + box.getBallSpeedInXDirection();
 
             if (proofX < (box.getBallRadius())
-                    && box.movesBallInNegativeXDirection()) {
+                    && box.ballMovesInNegativeXDirection()) {
                 invertAndSlowSpeedInXDirection();
                 collisionOccurred = true;
                 proofX = box.getBallRadius();
             } else if (proofX > (box.getLength() - box.getBallRadius())
-                    && box.movesBallInPositiveXDirection()) {
+                    && box.ballMovesInPositiveXDirection()) {
                 invertAndSlowSpeedInXDirection();
                 collisionOccurred = true;
                 proofX = box.getLength() - box.getBallRadius();
@@ -208,12 +208,12 @@ public class MovementSimulator implements Simulation {
 
             double proofY = newY + box.getBallSpeedInYDirection();
             if (proofY < (box.getBallRadius())
-                    && box.movesBallInNegativeYDirection()) {
+                    && box.ballMovesInNegativeYDirection()) {
                 invertAndSlowSpeedInYDirection();
                 collisionOccurred = true;
                 proofY = box.getBallRadius();
             } else if (proofY > (box.getHeight() - box.getBallRadius())
-                    && box.movesBallInPositiveYDirection()) {
+                    && box.ballMovesInPositiveYDirection()) {
                 invertAndSlowSpeedInYDirection();
                 collisionOccurred = true;
                 proofY = box.getHeight() - box.getBallRadius();

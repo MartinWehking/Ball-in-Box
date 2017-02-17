@@ -65,7 +65,7 @@ public class Box {
      * @return if the Ball currently moves in positive X-direction
      * @see Ball
      */
-    public boolean movesBallInPositiveXDirection() {
+    public boolean ballMovesInPositiveXDirection() {
         return ball.movesInPositiveXDirection();
     }
 
@@ -75,7 +75,7 @@ public class Box {
      * @return if the Ball currently moves in positive Y-direction
      * @see Ball
      */
-    public boolean movesBallInPositiveYDirection() {
+    public boolean ballMovesInPositiveYDirection() {
         return ball.movesInPositiveYDirection();
     }
 
@@ -85,7 +85,7 @@ public class Box {
      * @return if the Ball currently moves in negative X-direction
      * @see Ball
      */
-    public boolean movesBallInNegativeXDirection() {
+    public boolean ballMovesInNegativeXDirection() {
         return ball.movesInNegativeXDirection();
     }
 
@@ -95,7 +95,7 @@ public class Box {
      * @return if the Ball currently moves in negative Y-direction
      * @see Ball
      */
-    public boolean movesBallInNegativeYDirection() {
+    public boolean ballMovesInNegativeYDirection() {
         return ball.movesInNegativeYDirection();
     }
 
